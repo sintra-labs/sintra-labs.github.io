@@ -13,13 +13,25 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo-container">
-                <img src="logo.svg" alt="Sintra Labs" class="logo-icon">
-                <h1 class="logo-text">Sintra Labs</h1>
-            </div>
+            <a href="index.html" class="logo-link">
+                <div class="logo-container">
+                    <img src="logo.svg" alt="Sintra Labs" class="logo-icon">
+                    <h1 class="logo-text">Sintra Labs</h1>
+                </div>
+            </a>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="vision.html" class="active">Vision</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="toggle-indicator"></span>
+                    <svg class="icon sun-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+                    </svg>
+                    <svg class="icon moon-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -65,5 +77,6 @@
             <p>&copy; 2025 Sintra Labs</p>
         </div>
     </footer>
+    <script src="theme.js"></script>
 </body>
 </html>
