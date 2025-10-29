@@ -95,7 +95,7 @@ header .container {
 }
 
 [data-theme="dark"] .logo-icon {
-    content: url('logo-dark.svg');
+    content: url('../images/logo-dark.svg');
 }
 
 .logo-text {
