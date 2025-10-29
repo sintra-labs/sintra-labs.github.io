@@ -52,7 +52,37 @@ class ThemeManager {
     }
 }
 
-// Initialize theme manager when DOM is ready
+// Scroll animation for preview cards
+class ScrollAnimations {
+    constructor() {
+        this.cards = document.querySelectorAll('.preview-card');
+        this.init();
+    }
+
+    init() {
+        if (this.cards.length === 0) return;
+
+        // Create intersection observer
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        this.cards.forEach(card => observer.observe(card));
+    }
+}
+
+// Initialize theme manager and scroll animations when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new ThemeManager();
+    new ScrollAnimations();
 });
